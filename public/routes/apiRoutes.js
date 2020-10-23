@@ -2,9 +2,9 @@ const path = require("path");
 
 
 
-module.exports = function(app, ){
+module.exports = function(app, notes){
     app.get("/api/notes", function (req, res){
-        return res.json();
+        return res.json(notes);
     });
 
     app.post("/api/characters", function (req, res) {
