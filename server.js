@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3002;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 
 const notes = JSON.parse(fs.readFileSync("./db/db.json", 'utf-8'))
