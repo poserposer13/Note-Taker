@@ -19,6 +19,7 @@ module.exports = function (app) {
             if (err) throw err;
             console.log("New Note Added")
         });
+        return res.json(notes)
     });
 
     app.delete("/api/notes/:id", function (req, res) {
@@ -31,6 +32,7 @@ module.exports = function (app) {
         fs.writeFileSync("./db/db.json", JSON.stringify(newNotes), 'utf-8', (err) => {
             if (err) throw err;
             console.log("New Note Added")
+        })
+        return res.json(newNotes)
     })
-})
 }
