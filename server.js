@@ -1,6 +1,6 @@
 // Dependencies and Constants
 const express = require("express");
-const fs = require("fs");
+
 
 const app = express();
 
@@ -12,10 +12,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-const notes = JSON.parse(fs.readFileSync("./db/db.json", 'utf-8'))
-
 // Routes
-require('./public/routes/apiRoutes')(app, notes)
+require('./public/routes/apiRoutes')(app)
 require('./public/routes/htmlRoutes')(app)
 
 
